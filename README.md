@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Description
 The application will help you organize your day. Thanks to this application you will not forget to do you have to do.
 
+![Preview](https://github.com/PrzemekBiernat1998/todo-list-react/blob/master/readme.jpg)
+
 ## Technologies
 - HTML
 - CSS
