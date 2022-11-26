@@ -9,10 +9,10 @@ const Buttons = ({tasks, hideDoneTasks}) =>
             <button className="buttons__button"> {hideDoneTasks ? "Pokaż " : "Ukryj "
                 }ukończone</button>
             <button 
-                className="buttons_button"
+                className="buttons__button"
                 disabled={tasks.every(({ done }) => done)}
             >
-              Ukończ wszystkie
+              Ukończ wszystkie  
             </button>
                 </React.Fragment>
             )}
