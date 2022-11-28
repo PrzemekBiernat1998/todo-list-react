@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Buttons from "./Buttons";
 import Form from "./Form";
 import Tasks from "./Tasks";
@@ -10,9 +10,15 @@ import Container from "./Container";
     {id: 1, content: "Zjesc bułke", done:true},
   ];
 
-  const hideDones = false;
+
 
 function App() {
+  const [hideDone, setHideDone] = useState(false);
+
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  };
+
   return (
     <body className="body">
     <Container className="container">
@@ -23,8 +29,8 @@ function App() {
     />
     <Section 
     title="Lista zadań"
-    body={<Tasks tasks={tasks} hideDones={hideDones} />} 
-    extraContainer={<Buttons tasks={tasks} hideDones={hideDones} />}
+    body={<Tasks tasks={tasks} hideDone={hideDone} />} 
+    extraContainer={<Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} />}
     />
     </Container>
     </body>
