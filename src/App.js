@@ -10,7 +10,7 @@ import Container from "./Container";
     {id: 1, content: "Zjesc bułke", done:true},
   ];
 
-  const hideDoneTasks = false;
+  const hideDones = false;
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
     />
     <Section 
     title="Lista zadań"
-    body={<Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />} 
-    extraContainer={<Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+    body={<Tasks tasks={tasks} hideDones={hideDones} />} 
+    extraContainer={<Buttons tasks={tasks} hideDones={hideDones} />}
     />
     </Container>
     </body>
