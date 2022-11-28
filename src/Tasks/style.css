@@ -46,7 +46,7 @@ list__task--hidden {
 
 .list__taskButton--remove {
   background-color: rgb(238, 43, 43);
-  justify-self: flex-end;
+  float: right;
 }
 
 .list__taskButton--remove:hover {
