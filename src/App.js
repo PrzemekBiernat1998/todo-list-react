@@ -52,13 +52,13 @@ function App() {
     <Container className="container">
     <Header title="Lista zadań" />
     <Section 
-    title="Dodaj nowe zadanie" 
-    body={<Form  addNewTask={addNewTask}/>}
+      title="Dodaj nowe zadanie" 
+      body={<Form  addNewTask={addNewTask}/>}
     />
     <Section 
-    title="Lista zadań"
-    body={<Tasks tasks={tasks} hideDone={hideDone} removeTask={removeTask} toggleTaskDone={toggleTaskDone}  />} 
-    extraContainer={<Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone} />}
+      title="Lista zadań"
+      body={<Tasks tasks={tasks} hideDone={hideDone} removeTask={removeTask} toggleTaskDone={toggleTaskDone}  />} 
+      extraContainer={<Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone} />}
     />
     </Container>
     </body>
