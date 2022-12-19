@@ -15,7 +15,7 @@
   word-break: break-all;
 }
 
-list__task--hidden {
+.list__task--hidden {
   display: none;
 }
 
