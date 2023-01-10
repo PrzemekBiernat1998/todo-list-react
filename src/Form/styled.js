@@ -12,6 +12,7 @@ export const MainForm = styled.form`
     margin-right: 10px;
 }
 `;
+
 export const Input = styled.input`
     flex-grow: 1;
     padding: 5px;
@@ -22,6 +23,7 @@ export const Input = styled.input`
     width: 100%;
 }
 `;
+
 export const Button = styled.button`
     padding: 5px 20px;
     background-color: teal;
