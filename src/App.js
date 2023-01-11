@@ -26,7 +26,6 @@ function App() {
   } = useTasks();
 
   return (
-    <body className="body">
       <Container className="container">
         <Header title="Lista zadań" />
         <Section
@@ -39,7 +38,6 @@ function App() {
           extraContainer={<Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone} />}
         />
       </Container>
-    </body>
   );
 }
 
