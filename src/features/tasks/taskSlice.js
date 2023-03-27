@@ -19,12 +19,12 @@ const taskSlice = createSlice ({
             });
         },
         toggleTaskDone: ({ tasks }, { payload: taskID}) => {
-            const findId = tasks.findIndex((task) => task.id === taskID);
-            tasks[findId].done = !tasks[findId].done;
+            const index = tasks.findIndex((task) => task.id === taskID);
+            tasks[index].done = !tasks[index].done;
         },
         removeTask: ( {tasks}, {payload: taskID}) => {
-            const findId = tasks.findIndex( (task) => task.id === taskID);
-            tasks.splice(findId, 1);
+            const index = tasks.findIndex( (task) => task.id === taskID);
+            tasks.splice(index, 1);
         },
     },
 });
