@@ -1,14 +1,31 @@
+import { nanoid } from "@reduxjs/toolkit";
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "../taskSlice";
 import { MainForm,
 Button,
 Input, } from "./styled";
 
-const Form = ({ addNewTask }) => {
+const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState("");
+
+  const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    addNewTask(newTaskContent.trim());
+
+    const trimNewTaskContent = newTaskContent.trim();
+
+    if (!trimNewTaskContent) {
+      return;
+    }
+
+    dispatch(addTask({
+      content: trimNewTaskContent,
+      done : false,
+      id: nanoid(),
+      }));
+
     setNewTaskContent("")
     inputFocus(inputRef);
   };
@@ -23,7 +40,6 @@ const Form = ({ addNewTask }) => {
     <MainForm className="form" onSubmit={onFormSubmit}>
       <Input
         ref={inputRef}
-        value={newTaskContent}
         placeholder="Tutaj wpisz zadanie do zrobienia"
         onChange={({ target }) => setNewTaskContent(target.value)}
       />

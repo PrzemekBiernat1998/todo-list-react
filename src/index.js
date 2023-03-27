@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Tasks from './features/tasks/Tasks';
+import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle } from "./GlobalStyle";
+import store from './store'; 
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <Tasks />
+    <Provider store={store}>
+      <GlobalStyle />
+      <Tasks />
+    </Provider>
   </React.StrictMode>
 );
 
