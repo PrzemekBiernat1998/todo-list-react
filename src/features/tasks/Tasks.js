@@ -1,4 +1,4 @@
-import Buttons from "./Buttons";
+import Buttons from "./Buttons/";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Section from "../../common/Section";
