@@ -27,11 +27,11 @@ export const TaskItem = styled.span`
     }
 
 ${function ({ done }) {
-        return done &&
-            css`
+    return done &&
+      css`
         text-decoration: line-through;
     `;
-    }}
+  }}
 `;
 
 export const Button = styled.button`
@@ -50,7 +50,7 @@ export const Button = styled.button`
   ${({ remove }) =>
     remove &&
     css`
-      background-color: ${({theme}) => theme.color.crimson };
+      background-color: ${({ theme }) => theme.color.crimson};
     `}
     &:hover {
     filter: brightness(110%);

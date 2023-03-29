@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
 export const MainHeader = styled.header`
-    margin-left: 0px
+    margin-left: 10px
 `;

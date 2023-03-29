@@ -6,20 +6,20 @@ import Header from "../../common/Header";
 import Container from "../../common/Container";
 
 function Tasks() {
-  
+
   return (
-      <Container className="container">
-        <Header title="Lista zadań" />
-        <Section
-          title="Dodaj nowe zadanie"
-          body={<Form />}
-        />
-        <Section
-          title="Lista zadań"
-          body={<TasksList />}
-          extraContainer={<Buttons />}
-        />
-      </Container>
+    <Container className="container">
+      <Header title="Lista zadań" />
+      <Section
+        title="Dodaj nowe zadanie"
+        body={<Form />}
+      />
+      <Section
+        title="Lista zadań"
+        body={<TasksList />}
+        extraContainer={<Buttons />}
+      />
+    </Container>
   );
 }
 
