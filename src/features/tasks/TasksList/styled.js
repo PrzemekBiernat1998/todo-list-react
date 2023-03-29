@@ -1,24 +1,21 @@
 import styled, { css } from "styled-components";
 
 export const List = styled.ul`
-  width: 100%;
-  padding: 10px;
-  list-style-type: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 `;
 export const Item = styled.li`
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 10px;
-  padding: 20px;
-  text-decoration: none;
   align-items: center;
-  border-bottom: 1px solid #eee;
-  word-break: break-all;
-
-${({hidden}) =>
-        hidden &&
-        css`
-        display: none;
+  padding: 10px;
+  border-bottom: 1px solid ${({ theme }) => theme.color.alto};
+  ${({ hidden }) =>
+    hidden &&
+    css`
+      display: none;
     `}
 `;
 
@@ -38,26 +35,27 @@ ${function ({ done }) {
 `;
 
 export const Button = styled.button`
+   border: none;
+  color: ${({ theme }) => theme.color.white};
   width: 30px;
   height: 30px;
-  background-color: #1a7a1d;
-  border: none;
+  padding: 0;
   cursor: pointer;
-  transition: 1s;
-
-  &:hover{
-    background-color: hsl(122, 65%, 34%);
+  transition: background 0.5s;
+  ${({ toggleDone }) =>
+    toggleDone &&
+    css`
+      background-color: ${({ theme }) => theme.color.forestGreen};
+    `}
+  ${({ remove }) =>
+    remove &&
+    css`
+      background-color: ${({theme}) => theme.color.crimson };
+    `}
+    &:hover {
+    filter: brightness(110%);
   }
-
-  ${function ({ remove }) {
-        return remove &&
-            css`
-      background: red;
-      &:hover {
-        background: hsl(0, 100%, 60%);
-        transition: 0.3s;
-        cursor: pointer;
-      }
-    `;
-    }}
+  &:active {
+    filter: brightness(120%);
+  }
 `;
