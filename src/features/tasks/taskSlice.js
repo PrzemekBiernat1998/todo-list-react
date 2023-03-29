@@ -18,14 +18,14 @@ const taskSlice = createSlice ({
                 task.done = true;
             };
         },
-        toggleTaskDone: (state, action) => {
-            const index = state.tasks.findIndex(task => task.id === action.payload);
-            state.tasks[index].done = !state.tasks[index].done;
-        },
-        removeTask: (state, action) => {
-            const index = state.tasks.findIndex(task => task.id === action.payload);
-            state.tasks.splice(index, 1);
-        },
+        toggleTaskDone: ({ tasks }, { payload: taskID }) => {
+            const index = tasks.findIndex((task) => task.id === taskID);
+            tasks[index].done = !tasks[index].done;
+          },
+          removeTask: ({ tasks }, { payload: taskID }) => {
+            const index = tasks.findIndex((task) => task.id === taskID);
+            tasks.splice(index, 1);
+          },
     },
 });
 
@@ -39,6 +39,7 @@ export const {
 export const selectTasksState = (state) => state.tasks;
 export const selectTasks = (state) => selectTasksState(state).tasks;
 export const selectHideDone = (state) => selectTasksState(state).hideDone;
-export const selectEveryTasksIsDone = (state) => selectTasks(state).every(( {done} ) => done);
+export const selectEveryTasksIsDone = (state) => selectTasks(state).every(({ done }) => done);
+
 export default taskSlice.reducer;
   
