@@ -5,8 +5,8 @@ import { selectEveryTasksIsDone,
     selectHideDone, 
     toggleHideDone, 
     setAllDone, 
-    selectTasks,
-    fetchExampleTasks } from "../taskSlice";
+    selectTasks
+} from "../taskSlice";
 
 const Buttons = () => {
 
@@ -19,9 +19,6 @@ const Buttons = () => {
 
     return (
         <Container>
-            <Button onClick={() => dispatch(fetchExampleTasks())}>
-                Pobierz przykładowe zadania
-            </Button>
             {tasks.length > 0 && (
                 <>
                     <Button onClick={() => dispatch(toggleHideDone())}> {hideDone ? "Pokaż " : "Ukryj "
@@ -37,6 +34,4 @@ const Buttons = () => {
         </Container>
     );
 }
-
-
 export default Buttons;
