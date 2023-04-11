@@ -1,11 +1,18 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeTask, selectHideDone, selectTasks, toggleTaskDone } from "../taskSlice";
+import { removeTask, selectHideDone, selectTasksByQuery, toggleTaskDone } from "../../taskSlice";
 import { Button, Item, List, TaskItem } from "./styled";
+import { Link, useLocation  } from "react-router-dom";
+import searchQueryParamName from "../searchQueryParamName";
+
 
 const TasksList = () => {
-    const tasks = useSelector(selectTasks);
+
+    const location = useLocation();
+    const query = (new URLSearchParams(location.search)).get(searchQueryParamName);
+
+    const tasks = useSelector(state => selectTasksByQuery(state, query));
     const hideDone = useSelector(selectHideDone);
+
     const dispatch = useDispatch();
 
     return (
@@ -18,7 +25,9 @@ const TasksList = () => {
                     >
                         {task.done ? "✔️" : ""}
                     </Button>
-                    <TaskItem done={task.done}>{task.content}</TaskItem>
+                    <TaskItem done={task.done}>
+                        <Link to={`/zadania/${task.id}`}>{task.content}</Link>
+                        </TaskItem>
                     <Button
                         remove
                         onClick={() => dispatch(removeTask(task.id))}

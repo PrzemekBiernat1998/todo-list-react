@@ -6,7 +6,7 @@ import { selectEveryTasksIsDone,
     toggleHideDone, 
     setAllDone, 
     selectTasks
-} from "../taskSlice";
+} from "../../taskSlice";
 
 const Buttons = () => {
 

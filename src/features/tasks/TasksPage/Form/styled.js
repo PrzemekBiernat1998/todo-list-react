@@ -9,15 +9,6 @@ export const MainForm = styled.form`
 }
 `;
 
-export const Input = styled.input`
-    padding: 10px;
-    border: 1px solid ${({ theme }) => theme.color.alto};
-
-  @media (max-width: 767px) {
-    width: 100%;
-}
-`;
-
 export const Button = styled.button`
     padding: 10px;
     background-color: ${({ theme }) => theme.color.teal};
