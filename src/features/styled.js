@@ -1,34 +1,21 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom"
 
-const activeClassName = "active";
-
-export const StyledNav = styled.nav`
-    display: flex;
-    flex-direction: column;
-    text-align: center;   
-    background-color: teal;
-    color: white;
-    width: 100%;
-    height: 50px;
+export const Button = styled.button`
+    background: transparent;
+    color: ${({ theme }) => theme.color.teal};
+    border: none;
+    margin: 0 0 0 20px;
+  @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        flex-basis: 100%;
+        margin: 10px;
+    }
+    &:hover {
+        filter: brightness(110%);
+    }
+    &:disabled{
+        filter:brightness(150%);
+        color: ${({ theme }) => theme.color.grey};
+    }
 `;
-
-export const StyledLi = styled.li`
-    display: inline;
-`;
-
-export const StyledNavLink = styled(NavLink)`
-&.${activeClassName}{
-    color: white;
-    font-weight: bold;
-    text-decoration: none !important;
-}
-    background: #008080;
-	color: #FFF;
-    text-decoration: none !important;
-	height: 45px;
-	padding-left: 18px;
-	border-radius: 10px;
-    `;
 
 

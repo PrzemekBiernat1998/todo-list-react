@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const List = styled.ul`
@@ -11,6 +12,7 @@ export const Item = styled.li`
   grid-gap: 10px;
   align-items: center;
   padding: 10px;
+  outline:  none;
   border-bottom: 1px solid ${({ theme }) => theme.color.alto};
   ${({ hidden }) =>
     hidden &&
@@ -21,15 +23,19 @@ export const Item = styled.li`
 
 export const TaskItem = styled.span`
     padding-left: 10px;
+    text-decoration: none;
+    outline:  none;
+    color: ${({ theme }) => theme.color.teal};
 
-    &:hover{
-        background-color: rgb(190, 190, 190);
-    }
-
+    &:hover {
+    filter: brightness(110%);
+  }
+  
 ${function ({ done }) {
     return done &&
       css`
         text-decoration: line-through;
+        outline:  none;
     `;
   }}
 `;
@@ -59,3 +65,7 @@ export const Button = styled.button`
     filter: brightness(120%);
   }
 `;
+export const StyledLink = styled(Link)`
+text-decoration:none !important;
+color: ${({ theme }) => theme.color.teal};
+`
